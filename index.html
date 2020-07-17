@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tag Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    <style>
+        #tag_columns {
+            display: block;
+            border: 1px solid #ccc;
+            padding: 4px 8px;
+            border-radius: 8px;
+        }
+
+        .tag_column {
+            display: table-cell;
+            border: 1px dashed #ccc;
+            border-right: none;
+            padding: 10px;
+            width: 248px;
+        }
+
+        .tag_column:last-child {
+            border-right: 1px dashed #ccc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container'>
+        <div id='tag_size'></div>
+        <div id='tag_columns'></div>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script>
+        let stok_info = {
+            "nama": "ADALAH NAMA BARANG",
+            "mutu": "M:916",
+            "berat": "B:3.12",
+            "upah": "U:43000",
+            "supplier": "FC",
+            "no_tag": "0000022362",
+            "nama_kedai": "KEDAI DEVELOPMENT",
+            "ukuran":"P:100 L:20 D:60"
+        }
+        let tag_label_format = {
+            "size": {
+                "label": "100 mm x 12mm",
+                "value": "10012",
+                "measurement": "100x12"
+            },
+            "upah": {
+                "value": 0.25,
+                "factor": "multiply"
+            },
+            "permata": {
+                "value": 300,
+                "factor": "add"
+            },
+            "label": {
+                "column_1": {
+                    "barcode": {
+                        "height": "10",
+                        "font_size": "10"
+                    },
+                    "text": [
+                        "{{nama_kedai}}"
+                    ]
+                },
+                "column_2": {
+                    "text": [
+                        "{{nama_stok}}",
+                        "{{mutu}}{{separator}}{{berat}}",
+                        "{{ukuran}}"
+                    ]
+                },
+                "column_3": {
+                    "empty": true
+                }
+            }
+        }
+
+        let tag_columns = tag_label_format.label
+
+        function text_extractor(text_value) {
+            let found = "",          
+                rxp = /{{([^}]+)}}/g,
+                curMatch;
+            while (curMatch = rxp.exec(text_value)) {
+                found += text_value_assignment[curMatch[1]]();
+            }
+            return found
+        }
+
+        const element = {
+            barcode: (payloads) => {
+                return 'this is barcode'
+            },
+            text: (payloads) => {
+                let html = ""
+                payloads.map((value, index) => {
+                    html += `<div>${text_extractor(value)}</div>`
+                })
+                return html
+            },
+            empty: (payloads) => {
+                return ''
+            }
+        }
+
+        const text_value_assignment = {
+            nama_stok: () => stok_info.nama,
+            nama_kedai: () => stok_info.nama_kedai,
+            mutu: () => stok_info.mutu,
+            berat: () => stok_info.berat,
+            ukuran: () => stok_info.ukuran,
+            separator: () => " "
+        }
+
+        function column_data(data) {
+            let html = "<div>"
+            Object.keys(tag_columns[data]).map((value, index) => {
+                let payloads = tag_columns[data][value]
+                html += `<div>${element[value](payloads)}</div>`
+            })
+            html += "</div>"
+            return html
+        }
+
+        function create_column(payloads) {
+            let html = "<div class='tag_column'>"
+            html += column_data(payloads)
+            html += "</div>"
+            return html
+        }
+
+        let tag_data = Object.keys(tag_columns).map((value, index) => {
+            return create_column(value)
+        })
+
+        $(document).ready(function () {
+            $('#tag_size').text(tag_label_format.size.label)
+            $('#tag_columns').html(tag_data)
+
+        })
+
+    </script>
+</body>
+
+</html>
