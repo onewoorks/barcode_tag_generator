@@ -24,16 +24,411 @@
         .tag_column:last-child {
             border-right: 1px dashed #ccc;
         }
+
+        div[id^="form_"] {
+            display: none;
+        }
     </style>
 </head>
 
 <body>
+    <br>
     <div class='container'>
-        <div id='tag_size'></div>
-        <div id='tag_columns'></div>
+        <div class="row">
+            <div class="col-sm-6">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Label Prefix Setup</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-3">Berat</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="B:" />
+                                </div>
+                                <label for="" class="control-label col-sm-3">Upah</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="U:" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-3">Supplier</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="S:" />
+                                </div>
+                                <label for="" class="control-label col-sm-3">Mutu</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="M:" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-3">Pembahagi</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="/" />
+                                </div>
+                                <label for="" class="control-label col-sm-3">Panjang</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="P:" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-3">Lebar</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="L:" />
+                                </div>
+                                <label for="" class="control-label col-sm-3">Diameter</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="D:" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-3">Cincin</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control" value="S" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Text Replacer</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">A</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="A" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">B</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="B" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">C</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="C" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">D</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="D" />
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">E</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="E" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">F</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="F" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">G</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="G" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">H</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="H" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">I</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="I" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">J</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="J" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">K</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="K" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">L</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="L" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">M</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="M" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">N</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="N" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">O</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="0" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">P</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="P" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">Q</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="Q" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">R</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="R" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">S</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="S" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">T</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="T" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">U</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="U" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">V</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="V" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">W</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="W" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">X</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="X" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">Y</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="Y" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">Z</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="Z" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">.</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="." />
+                                </div>
+                                <label for="" class="control-label col-sm-1">1</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="1" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">2</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="2" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">3</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="3" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">4</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="4" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">5</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="5" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">6</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="6" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">7</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="7" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">8</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="8" />
+                                </div>
+                                <label for="" class="control-label col-sm-1">9</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="9" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-1">0</label>
+                                <div class="col-sm-2">
+                                    <input type="text" class="form-control text-center" value="0" />
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">Tag Setup</div>
+                    <div class="panel-body">
+                        <div class="form-horizontal">
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-3">Size Tag</label>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control text-center" />
+                                        <span class="input-group-addon">mm</span>
+                                    </div>
+
+                                </div>
+                                <div class="col-sm-1 text-center">
+                                    <div class='form-control-static'>x</div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control text-center" />
+                                        <span class="input-group-addon">mm</span>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="" class="control-label col-sm-3">Column</label>
+                                <div class="col-sm-4">
+                                    <input type="text" class='form-control text-center' value="1" />
+                                </div>
+                            </div>
+
+                            <div id='column_setup'>
+                                <ul class="nav nav-tabs">
+                                    <li class="active"><a href="#column_1" data-toggle="tab">Column 1</a></li>
+                                    <li><a href="#column_2" data-toggle="tab">Column 2</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <br>
+                                    <div class="form-group">
+                                        <label for="" class="col-sm-3 control-label">Element</label>
+                                        <label for="" class="radio-inline">
+                                            <input type="radio" name="column_1_element"
+                                                value="qrcode">Qrcode</label>
+                                        </label>
+                                        <label for="" class="radio-inline">
+                                            <input type="radio" name="column_1_element"
+                                                value="barcode">Barcode</label>
+                                        </label>
+                                        <label for="" class="radio-inline">
+                                            <input type="radio" name="column_1_element" value="text">Text</label>
+                                        </label>
+                                        <label for="" class="radio-inline">
+                                            <input type="radio" name="column_1_element"
+                                                value="kosong">Kosong</label>
+                                        </label>
+                                    </div>
+
+                                    <hr>
+
+                                    <div id="form_qrcode">
+                                        <div class="form-group">
+                                            <label for="" class='control-label col-sm-3'>Size QrCode</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control text-center" value="20">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="form_barcode">
+                                        <div class="form-group">
+                                            <label for="" class="control-label col-sm-3">Barcode</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control text-center">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="" class="control-label col-sm-3">Barcode</label>
+                                            <div class="col-sm-4">
+                                                <input type="text" class="form-control text-center">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="form_text">
+                                        <div class="form-group">
+                                            <label for="" class="control-label col-sm-3">Text</label>
+                                            <div class="col-sm-6">
+                                                <select name="" id="" class="form-control">
+                                                    <option value="nama_stok">Nama Stok</option>
+                                                    <option value="mutu">Mutu</option>
+                                                    <option value="berat">Berat</option>
+                                                    <option value="upah">Upah</option>
+                                                    <option value="supplier">Pembekal</option>
+                                                    <option value="no_tag">No Tag</option>
+                                                    <option value="nama_kedai">Nama Kedai</option>
+                                                    <option value="ukuran">Ukuran</option>
+                                                </select>
+                                            </div>
+                                            <div class="col-sm-3 text-right">
+                                                <div class="btn btn-default">+</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div id="column_1" class="tab-pane fade in active">
+
+                                        
+
+                                        
+
+                                        <div id="form_masuk" class="form-group">
+                                            <div class="col-sm-12 text-right">
+                                                <div class="btn btn-default">
+                                                    Masuk
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div id="column_2" class="tab-pane fade">
+                                        column 2
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Tag Preview | <span id='tag_size'></span></div>
+                    <div class="panel-body">
+                        <div id='tag_columns'></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
     </div>
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"
         integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+        integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+        crossorigin="anonymous"></script>
+    <script src="./js/barcode.all.min.js"></script>
     <script>
         let stok_info = {
             "nama": "ADALAH NAMA BARANG",
@@ -43,7 +438,7 @@
             "supplier": "FC",
             "no_tag": "0000022362",
             "nama_kedai": "KEDAI DEVELOPMENT",
-            "ukuran":"P:100 L:20 D:60"
+            "ukuran": "P:100 L:20 D:60"
         }
         let tag_label_format = {
             "size": {
@@ -62,8 +457,9 @@
             "label": {
                 "column_1": {
                     "barcode": {
-                        "height": "10",
-                        "font_size": "10"
+                        "height": "20",
+                        "font_size": "10",
+                        "alignment": "center"
                     },
                     "text": [
                         "{{nama_kedai}}"
@@ -85,7 +481,7 @@
         let tag_columns = tag_label_format.label
 
         function text_extractor(text_value) {
-            let found = "",          
+            let found = "",
                 rxp = /{{([^}]+)}}/g,
                 curMatch;
             while (curMatch = rxp.exec(text_value)) {
@@ -96,7 +492,15 @@
 
         const element = {
             barcode: (payloads) => {
-                return 'this is barcode'
+                let html = `<svg class="barcode"
+                            jsbarcode-value="12345"
+                            jsbarcode-height='${payloads.height}'
+                            jsbarcode-textmargin="0"
+                            jsbarcode-width='1'
+                            jsbarcode-fontsize='${payloads.font_size}'
+                            jsbarcode-margin='2'>
+                            </svg>`
+                return html
             },
             text: (payloads) => {
                 let html = ""
@@ -120,17 +524,16 @@
         }
 
         function column_data(data) {
-            let html = "<div>"
+            let html = ""
             Object.keys(tag_columns[data]).map((value, index) => {
                 let payloads = tag_columns[data][value]
                 html += `<div>${element[value](payloads)}</div>`
             })
-            html += "</div>"
             return html
         }
 
         function create_column(payloads) {
-            let html = "<div class='tag_column'>"
+            let html = "<div class='tag_column' style='vertical-align:top'>"
             html += column_data(payloads)
             html += "</div>"
             return html
@@ -143,7 +546,13 @@
         $(document).ready(function () {
             $('#tag_size').text(tag_label_format.size.label)
             $('#tag_columns').html(tag_data)
+            JsBarcode(".barcode").init();
 
+            $('[name=column_1_element]').change(function () {
+                $('[id^="form_"]').hide()
+                $('#form_' + $(this).val()).show()
+                $('#form_masuk').show()
+            })
         })
 
     </script>
